@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"rocketchat.instances"},{"v":2,"key":{"_updatedAt":1},"name":"_updatedAt_1","ns":"rocketchat.instances","expireAfterSeconds":60}],"uuid":"f4894b4aef2047a39e803cb4c720816f"}

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"rocketchat.rocketchat_webdav_accounts"},{"v":2,"key":{"_updatedAt":1},"name":"_updatedAt_1","ns":"rocketchat.rocketchat_webdav_accounts"},{"v":2,"key":{"user_id":1},"name":"user_id_1","ns":"rocketchat.rocketchat_webdav_accounts"}],"uuid":"0154eca2dadc44c4b17c1bd31c5faa0d"}

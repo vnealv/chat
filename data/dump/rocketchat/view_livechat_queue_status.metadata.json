@@ -1,0 +1,1 @@
+{"options":{"viewOn":"rocketchat_room","pipeline":[{"$match":{"open":true,"servedBy":{"$exists":true}}},{"$group":{"_id":"$servedBy._id","chats":{"$sum":1}}},{"$sort":{"chats":1}}]},"indexes":[]}

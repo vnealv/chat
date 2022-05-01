@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"rocketchat.rocketchat_livechat_external_message"},{"v":2,"key":{"_updatedAt":1},"name":"_updatedAt_1","ns":"rocketchat.rocketchat_livechat_external_message"},{"v":2,"key":{"rid":1},"name":"rid_1","ns":"rocketchat.rocketchat_livechat_external_message"}],"uuid":"cafbf6616b464fc6858eeea71d06e448"}
