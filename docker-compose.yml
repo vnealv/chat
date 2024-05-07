@@ -1,17 +1,17 @@
-version: '2'
-
 services:
  rocketchat:
-     image: rocket.chat:latest
+     image: rocket.chat:6.7
      restart: unless-stopped
      volumes:
      - ./uploads:/app/uploads
      environment:
      - PORT=3000
      - ROOT_URL=https://chat.codensmoke.com
-     - MONGO_URL=mongodb://mongo:27017/rocketchat
-     - MONGO_OPLOG_URL=mongodb://mongo:27017/local
+     - MONGO_URL=mongodb://mongo:27017/rocketchat?replicaSet=rs0&directConnection=true
+     - MONGO_OPLOG_URL=mongodb://mongo:27017/local?replicaSet=rs0&directConnection=true
      - Accounts_UseDNSDomainCheck=True
+     # Until we update mongodb
+     - BYPASS_MONGO_VALIDATION=true
      depends_on:
      - mongo
      expose:
@@ -22,11 +22,11 @@ services:
        - metrics_statstraffic
 
  mongo:
-     image: mongo:4.0
+     image: mongo:5.0.3
      restart: unless-stopped
-     command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
+     command: mongod --oplogSize 128 --replSet rs0
      volumes:
-     - ./data/runtime/db:/data/db
+     - data:/data/db
      - ./data/dump:/dump
      networks:
        - local
@@ -65,3 +65,6 @@ networks:
   metrics_statstraffic:
     external: true
   local:
+
+volumes:
+  data:
